@@ -18,6 +18,10 @@ import {
 import { Disclaimer, Moderation, Privacy, Terms } from "@/views/policy";
 import Forum from "@/views/public/Forum";
 import Settings from "@/views/user/Settings";
+import UsersManagement from "@/views/admin/UsersManagement";
+import PostsManagement from "@/views/admin/PostsManagement";
+import ReportsManagement from "@/views/admin/ReportsManagement";
+import SettingsManagement from "@/views/admin/SettingsManagement";
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
@@ -37,7 +41,10 @@ export default function AppRoutes() {
       <Route element={<PrivateRoute />}>
         <Route path="/dashboard" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />
-          {/* Add more admin routes here as needed */}
+          <Route path="users" element={<UsersManagement />} />
+          <Route path="posts" element={<PostsManagement />} />
+          <Route path="reports" element={<ReportsManagement />} />
+          <Route path="settings" element={<SettingsManagement />} />
         </Route>
       </Route>
 

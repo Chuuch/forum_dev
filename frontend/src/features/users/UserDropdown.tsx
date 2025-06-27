@@ -28,10 +28,11 @@ export function UserDropdown({ id, username, photo }: UserProps) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-10 w-10" size="icon">
-          <Avatar className="h-10 w-10 cursor-pointer">
+          <Avatar className="h-10 w-10 cursor-pointe ">
             <AvatarImage
               src={`${import.meta.env.VITE_SERVER_URL}/uploads/${photo}`}
               alt="User Image"
+              className="object-cover"
             />
             <AvatarFallback>
               <CircleUser className="h-6! w-6!" />

@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity, FileText, Flag, Settings, Shield, TrendingUp, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminDashboard() {
+  const navigate = useNavigate();
+
   // Mock data - in a real app, this would come from your API
   const stats = [
     {
@@ -96,19 +99,35 @@ export default function AdminDashboard() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
-              <Button variant='outline' className="flex items-center justify-center rounded-lg hover:bg-gray-900/50 hover:border-primary! transition-colors">
+              <Button 
+                variant='outline' 
+                className="flex items-center justify-center rounded-lg hover:bg-gray-900/50 hover:border-primary! transition-colors"
+                onClick={() => navigate('/dashboard/users')}
+              >
                 <Users className="h-5 w-5 mr-2 text-primary" />
                 Управление на потребители
               </Button>
-                <Button variant='outline' className="flex items-center justify-center rounded-lg hover:bg-gray-900/50 hover:border-primary! transition-colors">
-                  <FileText className="h-5 w-5 mr-2 text-primary" />
+              <Button 
+                variant='outline' 
+                className="flex items-center justify-center rounded-lg hover:bg-gray-900/50 hover:border-primary! transition-colors"
+                onClick={() => navigate('/dashboard/posts')}
+              >
+                <FileText className="h-5 w-5 mr-2 text-primary" />
                 Преглед на постове
               </Button>
-              <Button variant='outline' className="flex items-center justify-center rounded-lg hover:bg-gray-900/50 hover:border-primary! transition-colors">
+              <Button 
+                variant='outline' 
+                className="flex items-center justify-center rounded-lg hover:bg-gray-900/50 hover:border-primary! transition-colors"
+                onClick={() => navigate('/dashboard/reports')}
+              >
                 <Flag className="h-5 w-5 mr-2 text-primary" />
                 Сигнали
               </Button>
-              <Button variant='outline' className="flex items-center justify-center rounded-lg hover:bg-gray-900/50 hover:border-primary! transition-colors">
+              <Button 
+                variant='outline' 
+                className="flex items-center justify-center rounded-lg hover:bg-gray-900/50 hover:border-primary! transition-colors"
+                onClick={() => navigate('/dashboard/settings')}
+              >
                 <Settings className="h-5 w-5 mr-2 text-primary" />
                 Настройки
               </Button>
