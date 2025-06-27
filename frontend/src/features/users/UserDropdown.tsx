@@ -1,12 +1,12 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import LogoutButton from "@/components/ui/logout-button";
 import Settings from "@/views/user/Settings";
@@ -14,23 +14,26 @@ import { CircleUser, UserRoundPen, Wrench } from "lucide-react";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 
-
 interface UserProps {
   id: string;
   username: string;
   email: string;
-  photo: string;
+  photo?: string | null;
 }
 
 export function UserDropdown({ id, username, photo }: UserProps) {
   const navigate = useNavigate();
+  
+  // Construct photo URL only if photo exists
+  const photoUrl = photo ? `${import.meta.env.VITE_SERVER_URL}/uploads/${photo}` : undefined;
+  
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-10 w-10" size="icon">
           <Avatar className="h-10 w-10 cursor-pointe ">
             <AvatarImage
-              src={`${import.meta.env.VITE_SERVER_URL}/uploads/${photo}`}
+              src={photoUrl}
               alt="User Image"
               className="object-cover"
             />
@@ -71,4 +74,4 @@ export function UserDropdown({ id, username, photo }: UserProps) {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+} 

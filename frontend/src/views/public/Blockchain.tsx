@@ -7,12 +7,12 @@ export default function Blockchain() {
       <header>
         <title>TDB | Какво е Блокчейн?</title>
       </header>
-      <div className="max-w-5xl mx-auto p-6 text-gray-400 overflow-y-auto max-h-screen">
+      <div className="max-w-5xl mx-auto p-6 text-gray-400  max-h-screen">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="bg-transparent backdrop-blur-xl bg-transparent rounded-xl p-6"
+          className="bg-transparent backdrop-blur-xl bg-transparent rounded-xl p-6 overflow-y-auto max-h-screen"
         >
           <h1 className="text-4xl text-gray-300 font-bold mb-6">
             Какво е всъщност Блокчейн?

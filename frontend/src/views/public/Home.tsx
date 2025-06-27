@@ -3,6 +3,126 @@ import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import arbitrum from "/arbitrum.svg";
+import binance from "/binance.png";
+import certora from "/certora.svg";
+import code4rena from "/code4rena.png";
+import cyfrin from "/cyfrin.svg";
+import immunefy from "/immunefi.png";
+import MetaMask_Fox from "/MetaMask_Fox.svg.png";
+import OpenZeppelin from "/OpenZeppelin.svg";
+import Optimism from "/Optimism.png";
+import polkadot from "/polka.svg";
+import Polygon from "/Polygon_Icon.svg.png";
+import sherlock from "/sherlock.svg";
+import solana from "/solana.png";
+import trail from "/trail.svg";
+
+const logos = [
+  {
+    name: "Arbitrum",
+    image: arbitrum,
+    width: 200,
+    height: 200,
+    link: "https://arbitrum.io/",
+  },
+  {
+    name: "Binance",
+    image: binance,
+    width: 200,
+    height: 200,
+    link: "https://www.binance.com/",
+  },
+  {
+    name: "Certora",
+    image: certora,
+    width: 200,
+    height: 200,
+    link: "https://www.certora.com/",
+  },
+  {
+    name: "Cyfrin",
+    image: cyfrin,
+    width: 200,
+    height: 200,
+    link: "https://www.cyfrin.com/",
+  },
+  {
+    name: "Immunefy",
+    image: immunefy,
+    width: 300,
+    height: 300,
+    link: "https://immunefi.com/",
+  },
+  {
+    name: "MetaMask Fox",
+    image: MetaMask_Fox,
+    width: 100,
+    height: 100,
+    link: "https://metamask.io/",
+  },
+  {
+    name: "OpenZeppelin",
+    image: OpenZeppelin,
+    width: 150,
+    height: 150,
+    link: "https://www.openzeppelin.com/",
+  },
+  {
+    name: "Optimism",
+    image: Optimism,
+    width: 80,
+    height: 80,
+    link: "https://www.optimism.io/",
+  },
+  {
+    name: "Polkadot",
+    image: polkadot,
+    width: 200,
+    height: 100,
+    link: "https://www.polkadot.com/",
+  },
+  {
+    name: "Polygon",
+    image: Polygon,
+    width: 100,
+    height: 100,
+    link: "https://www.polygon.technology/",
+  },
+  {
+    name: "Sherlock",
+    image: sherlock,
+    width: 400,
+    height: 100,
+    link: "https://www.sherlock.xyz/",
+    },
+  {
+    name: "Code4rena",
+    image: code4rena,
+    width: 100,
+    height: 100,
+    link: "https://www.code4rena.com/",
+  },
+  {
+    name: "Solana",
+    image: solana,
+    width: 100,
+    height: 100,
+    link: "https://www.solana.com/",
+  },
+  {
+    name: "Trail",
+    image: trail,
+    width: 200,
+    height: 100,
+    link: "https://www.trail.xyz/",
+  },
+
+]
+
+const firstRowLogos = logos.slice(0, Math.ceil(logos.length / 2));
+const secondRowLogos = logos.slice(Math.ceil(logos.length / 2));
+
 export default function Home() {
   return (
     <>
@@ -57,10 +177,39 @@ export default function Home() {
               </Link>
             </Button>
             </div>
-
-            {/* DailyBlock Logo */}
           </motion.div>
-
+        </div>
+        <div className="flex flex-col items-start justify-start self-start rounded-3xl bg-transparent backdrop-blur-lg w-5/6 h-full">
+          {/* First row: left to right */}
+          <div className="relative overflow-hidden w-full mb-4 h-40 flex items-center">
+            <div className="flex animate-scroll-left items-center h-full p-10">
+              {[...firstRowLogos, ...firstRowLogos].map((logo, index) => (
+                <img
+                  key={`row1-${index}`}
+                  src={logo.image}
+                  alt={logo.name}
+                  className="object-contain cursor-pointer opacity-90 hover:opacity-100 mx-6 flex items-center justify-center"
+                  style={{ width: logo.width, height: logo.height }}
+                  onClick={() => window.open(logo.link, '_blank')}
+                />
+              ))}
+            </div>
+          </div>
+          {/* Second row: right to left */}
+          <div className="relative overflow-hidden w-full">
+            <div className="flex animate-scroll-right p-10">
+              {[...secondRowLogos, ...secondRowLogos].map((logo, index) => (
+                <img
+                  key={`row2-${index}`}
+                  src={logo.image}
+                  alt={logo.name}
+                  className="object-contain cursor-pointer opacity-90 hover:opacity-100 mx-6 flex items-center justify-center"
+                  style={{ width: logo.width, height: logo.height }}
+                  onClick={() => window.open(logo.link, '_blank')}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>

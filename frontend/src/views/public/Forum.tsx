@@ -5,7 +5,7 @@ import PostList from "@/features/posts/PostList";
 import SearchBar from "@/features/search/SearchBar";
 import SortDropdown from "@/features/sort-dropdown/SortDropdown";
 import { useCategories } from "@/hooks/useCategories";
-import { MessageSquarePlus, Search } from "lucide-react";
+import { Plus, Search } from "lucide-react";
 import { useState } from "react";
 
 export default function Forum() {
@@ -26,16 +26,16 @@ export default function Forum() {
     <header>
       <title>TDB | Форум</title>
     </header>
-    <div className="w-3/4 mx-auto px-4 py-8 h-screen bg-transparent backdrop-blur-lg rounded-lg p-6">
+    <div className="w-2/4 mx-auto px-4 py-8 h-full bg-transparent backdrop-blur-lg rounded-xl p-6">
       {/* Floating Create Post Button */}
       <Button
         onClick={handleCreatePost}
-        className="fixed top-8 right-8 z-50 rounded-full w-12 h-12 shadow-lg flex items-center justify-center text-gray-300 bg-transparent text-3xl"
+        className="fixed top-9 right-8 z-50 rounded-lg w-1/6 shadow-lg flex items-center justify-center text-gray-300 bg-transparent"
         size="icon"
         variant="outline"
       >
-        <MessageSquarePlus className="w-6! h-6! text-gray-300!" />
-        <span className="sr-only">Създай пост</span>
+        <Plus className="text-gray-300!" />
+        Създай пост
       </Button>
       <div className="flex items-center justify-center mb-10 gap-2 min-h-[48px]">
         <Search className="w-6 h-6 text-gray-500" />

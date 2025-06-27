@@ -28,8 +28,9 @@ export default function CategoryFilter({ selected, onSelect }: { selected: strin
     return (
         <>
             <div className="w-[200px] flex gap-2">
-                <Button size='icon' variant='outline' className='rounded-full' onClick={handleAddClick}>
+                <Button size='icon' variant='outline' className='rounded-lg w-full' onClick={handleAddClick}>
                     <Plus className="text-gray-300" />
+                    Добави категория
                 </Button>
                 <Select value={selected} onValueChange={onSelect}>
                     <SelectTrigger className="">

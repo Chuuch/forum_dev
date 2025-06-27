@@ -4,12 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  Settings, 
-  Save, 
-  Shield, 
+import {
   Bell,
   Globe,
+  Save,
+  Settings,
+  Shield,
   ShieldAlert,
 } from "lucide-react";
 import { useState } from "react";
@@ -115,29 +115,6 @@ export default function SettingsManagement() {
     }));
   };
 
-  const stats = [
-    {
-      title: "Общи настройки",
-      value: "6",
-      icon: <Globe className="h-4 w-4 text-primary" />,
-    },
-    {
-      title: "Модерация",
-      value: "7",
-      icon: <Shield className="h-4 w-4 text-blue-500" />,
-    },
-    {
-      title: "Известия",
-      value: "4",
-      icon: <Bell className="h-4 w-4 text-green-500" />,
-    },
-    {
-      title: "Сигурност",
-      value: "5",
-      icon: <ShieldAlert className="h-4 w-4 text-red-500" />,
-    },
-  ];
-
   return (
     <div className="w-full max-w-7xl mx-auto space-y-6">
       {/* Header */}
@@ -154,20 +131,6 @@ export default function SettingsManagement() {
         </div>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat, index) => (
-          <Card key={index} className="bg-transparent backdrop-blur-2xl rounded-lg">
-            <CardContent className="flex items-center justify-between p-6">
-              <div>
-                <p className="text-sm font-medium text-gray-400">{stat.title}</p>
-                <p className="text-2xl font-bold text-gray-300">{stat.value}</p>
-              </div>
-              {stat.icon}
-            </CardContent>
-          </Card>
-        ))}
-      </div>
 
       {/* Settings Sections */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

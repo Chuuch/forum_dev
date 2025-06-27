@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MessageSquare, ThumbsDown, ThumbsUp } from "lucide-react";
+import { Flag, MessageSquare, ThumbsDown, ThumbsUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const placeholderAvatar = "https://ui-avatars.com/api/?name=User&background=random";
@@ -74,15 +74,19 @@ export default function Post({
         <div className="flex items-center justify-start gap-1 text-xs text-gray-400">
           <Button variant="ghost" size="sm" className="flex items-center gap-1 hover:bg-gray-100! dark:hover:bg-gray-800!">
             <MessageSquare className="w-4 h-4 text-gray-400" />
-            <span className="text-gray-500">{commentsCount}</span>
+            <span className="text-gray-500">{commentsCount} Коментари</span>
           </Button>
           <Button variant="ghost" size="sm" className="flex items-center gap-1 hover:bg-gray-100! dark:hover:bg-gray-800!">
             <ThumbsUp className="w-4 h-4 text-gray-400" />
-            <span className="text-gray-500">{upvotes}</span>
+            <span className="text-gray-500">{upvotes} Харесвам</span>
           </Button>
           <Button variant="ghost" size="sm" className="flex items-center gap-1 hover:bg-gray-100! dark:hover:bg-gray-800!">
             <ThumbsDown className="w-4 h-4 text-gray-400" />
-            <span className="text-gray-500">{downvotes}</span>
+            <span className="text-gray-500">{downvotes} Не харесвам</span>
+          </Button>
+          <Button variant="ghost" size="sm" className="flex items-center gap-1 hover:bg-gray-100! dark:hover:bg-gray-800!">
+            <Flag className="w-4 h-4 text-gray-400" />
+            <span className="text-gray-500">Докладвай</span>
           </Button>
         </div>
       </CardContent>

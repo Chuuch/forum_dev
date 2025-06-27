@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+
+
 const links = [
   { href: "/terms-of-service", label: "Общи условия" },
   { href: "/privacy-policy", label: "Политика за поверителност" },
@@ -7,6 +9,8 @@ const links = [
   { href: "/moderation-policy", label: "Политика за модерация" },
   { href: "/contact", label: "Контакти" },
 ];
+
+
 
 export function Footer() {
   return (
