@@ -46,7 +46,7 @@ export const login = async (req: Request, res: Response) => {
     });
 
     res.status(201).json({
-      message: "User registered successfully",
+      message: "User logged in successfully",
       user: {
         id: user.id,
         username: user.username,

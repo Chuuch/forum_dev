@@ -33,7 +33,7 @@ export const registerUser = async (
     role: UserRole.USER,
   });
 
-  const token = generateToken(user.id, user.email, user.role);
+  const token = generateToken(user.id, user.role, user.email);
 
   return {
     user: {
